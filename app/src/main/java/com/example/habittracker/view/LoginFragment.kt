@@ -1,4 +1,4 @@
-package com.example.project1_weare.view
+package com.example.habittracker.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

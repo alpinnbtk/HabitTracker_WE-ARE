@@ -1,4 +1,4 @@
-package com.example.project1_weare.view
+package com.example.habittracker.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

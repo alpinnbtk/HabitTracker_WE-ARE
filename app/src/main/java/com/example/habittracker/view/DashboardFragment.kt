@@ -1,4 +1,4 @@
-package com.example.project1_weare.view
+package com.example.habittracker.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.habittracker.databinding.FragmentDashboardBinding
 import com.example.habittracker.viewmodel.HabitViewModel
 import androidx.navigation.fragment.findNavController
+import com.example.habittracker.view.HabitAdapter
 
 class DashboardFragment : Fragment() {
 
@@ -20,7 +21,6 @@ class DashboardFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // (kosong saja, sama seperti dosen)
     }
 
     override fun onCreateView(
@@ -41,9 +41,6 @@ class DashboardFragment : Fragment() {
         viewModel.loadFromFile()
 
         habitAdapter = HabitAdapter(arrayListOf(), viewModel)
-
-        // viewModel.loadHabits()
-
 
         binding.recyclerHabits.layoutManager = LinearLayoutManager(context)
         binding.recyclerHabits.adapter = habitAdapter
