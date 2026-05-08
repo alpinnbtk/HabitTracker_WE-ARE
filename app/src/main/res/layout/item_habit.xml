@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- ICON -->
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_icon_circle"
+            android:padding="10dp"
+            android:src="@android:drawable/ic_dialog_alert"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- NAME -->
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Drink Water"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/imgIcon"
+            app:layout_constraintTop_toTopOf="@id/imgIcon"
+            app:layout_constraintEnd_toStartOf="@id/txtStatus"
+            android:layout_marginStart="12dp"/>
+
+        <!-- DESC -->
+        <TextView
+            android:id="@+id/txtDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Stay hydrated throughout the day"
+            android:textColor="#777"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@id/txtName"
+            app:layout_constraintTop_toBottomOf="@id/txtName"
+            app:layout_constraintEnd_toEndOf="@id/txtName" />
+
+        <!-- STATUS -->
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="In Progress"
+            android:textSize="12sp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:background="@drawable/bg_status"
+            app:layout_constraintTop_toTopOf="@id/imgIcon"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- PROGRESS LABEL -->
+        <TextView
+            android:id="@+id/labelProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Progress"
+            android:textSize="13sp"
+            android:textColor="#666"
+            app:layout_constraintTop_toBottomOf="@id/imgIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="12dp"/>
+
+        <!-- PROGRESS TEXT -->
+
+        <!-- PROGRESS BAR -->
+        <TextView
+            android:id="@+id/txtProgress"
+            android:layout_width="46dp"
+            android:layout_height="19dp"
+            android:gravity="end"
+            android:text="3 / 8"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.754"
+            app:layout_constraintStart_toEndOf="@+id/labelProgress"
+            app:layout_constraintTop_toTopOf="@id/labelProgress" />
+
+        <TextView
+            android:id="@+id/txtUnit"
+            android:layout_width="60dp"
+            android:layout_height="18dp"
+            android:gravity="right"
+            android:text="glasses"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/labelProgress"
+            app:layout_constraintTop_toTopOf="@id/labelProgress" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="12dp"
+            android:progress="50"
+            app:layout_constraintTop_toBottomOf="@id/labelProgress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="6dp"/>
+
+        <!-- MIN BUTTON -->
+        <Button
+            android:id="@+id/btnMin"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:text="-"
+            app:layout_constraintEnd_toStartOf="@id/btnPlus"
+            app:layout_constraintTop_toBottomOf="@id/progressBar" />
+
+        <!-- PLUS BUTTON -->
+        <Button
+            android:id="@+id/btnPlus"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:text="+"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnMin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
