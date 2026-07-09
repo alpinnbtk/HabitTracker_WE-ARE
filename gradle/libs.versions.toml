@@ -9,6 +9,11 @@ appcompat = "1.7.1"
 material = "1.13.0"
 activity = "1.13.0"
 constraintlayout = "2.2.1"
+navigationFragmentKTX = "2.5.3"
+navigationUIKTX = "2.5.3"
+roomRuntime = "2.5.1"
+roomKTX = "2.5.1"
+roomCompiler = "2.5.1"
 navigationFragmentKtx = "2.9.7"
 navigationUiKtx = "2.9.7"
 
@@ -19,6 +24,11 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+navigation-fragment-ktx = { group ="androidx.navigation", name="navigation-fragment-ktx", version.ref="navigationFragmentKTX"}
+navigation-ui-ktx = { group ="androidx.navigation", name="navigation-ui-ktx", version.ref="navigationUIKTX" }
+room-runtime = { group="androidx.room", name="room-runtime", version.ref="roomRuntime" }
+room-ktx = { group="androidx.room", name="room-ktx", version.ref="roomKTX" }
+room-compiler = { group = "androidx.room", name="room-compiler", version.ref = "roomCompiler" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
