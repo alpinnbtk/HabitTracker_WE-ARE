@@ -32,7 +32,7 @@ class LoginViewModel(application: Application)
 
     override fun onCleared() {
         super.onCleared()
-        super.onCleared()
+
         job.cancel()
     }
 }

@@ -38,7 +38,8 @@ class DashboardFragment : Fragment() {
 
         viewModel = ViewModelProvider(requireActivity())[HabitViewModel::class.java]
 
-        viewModel.loadFromFile()
+//        viewModel.loadFromFile()
+        viewModel.loadHabits()
 
         habitAdapter = HabitAdapter(arrayListOf(), viewModel)
 
@@ -60,5 +61,7 @@ class DashboardFragment : Fragment() {
         viewModel.habits.observe(viewLifecycleOwner, Observer {
             habitAdapter.updateHabitList(ArrayList(it))
         })
+
+
     }
 }
