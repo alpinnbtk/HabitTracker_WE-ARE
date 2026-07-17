@@ -7,6 +7,8 @@ import com.example.habittracker.databinding.ItemHabitBinding
 import com.example.habittracker.model.Habit
 import com.example.habittracker.R
 import com.example.habittracker.viewmodel.HabitViewModel
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 
 class HabitAdapter(val habitList: ArrayList<Habit>, private val viewModel: HabitViewModel)
     : RecyclerView.Adapter<HabitAdapter.HabitViewHolder>() {
@@ -42,6 +44,11 @@ class HabitAdapter(val habitList: ArrayList<Habit>, private val viewModel: Habit
         {
             holder.binding.txtStatus.text = "In Progress"
             holder.binding.txtStatus.setBackgroundResource(R.drawable.bg_status)
+        }
+
+        holder.binding.txtName.setOnClickListener {
+            val bundle = bundleOf("habitId" to habit.id)
+            holder.itemView.findNavController().navigate(R.id.actionEditHabit, bundle)
         }
 
         holder.binding.btnPlus.setOnClickListener {
