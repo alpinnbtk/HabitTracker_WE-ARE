@@ -53,8 +53,6 @@ class HabitViewModel(application: Application) : AndroidViewModel(application), 
     }
 
     fun addHabit(habit: Habit) {
-
-
         launch{
             habitDao.insertHabit(habit)
             loadHabits()
@@ -66,7 +64,7 @@ class HabitViewModel(application: Application) : AndroidViewModel(application), 
         launch{
             if (habit.progress < habit.goal)
             {
-                habitDao.updateProgress(habit.id, habit.progress - 1)
+                habitDao.updateProgress(habit.id, habit.progress + 1)
                 loadHabits()
             }
         }
@@ -76,7 +74,7 @@ class HabitViewModel(application: Application) : AndroidViewModel(application), 
          launch{
             if (habit.progress > 0)
             {
-                habitDao.updateProgress(habit.id, habit.progress + 1)
+                habitDao.updateProgress(habit.id, habit.progress - 1)
                 loadHabits()
             }
         }

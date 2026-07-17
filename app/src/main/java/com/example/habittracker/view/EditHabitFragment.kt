@@ -31,9 +31,6 @@ class EditHabitFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[EditHabitViewModel::class.java]
 
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = viewLifecycleOwner
-
         val habitId = arguments?.getInt("habitId") ?: -1
 
         val adapter = ArrayAdapter(
@@ -48,6 +45,10 @@ class EditHabitFragment : Fragment() {
             viewModel.loadHabit(habitId)
         }
 
+        viewModel.habitLD.observe(viewLifecycleOwner) { habit ->
+            binding.habit = habit
+        }
+
         viewModel.selectedIconIndex.observe(viewLifecycleOwner) { index ->
             binding.spinnerIcon.setSelection(index)
         }
@@ -59,6 +60,8 @@ class EditHabitFragment : Fragment() {
         }
 
         binding.btnSubmit.setOnClickListener {
+            val goalInput = binding.txtGoal.text.toString().toIntOrNull() ?: 0
+            viewModel.habitLD.value?.goal = goalInput
             viewModel.updateHabit(binding.spinnerIcon.selectedItemPosition)
         }
     }

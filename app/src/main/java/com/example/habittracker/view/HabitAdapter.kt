@@ -53,7 +53,7 @@ class HabitAdapter(val habitList: ArrayList<Habit>, private val viewModel: Habit
 
         holder.binding.btnPlus.setOnClickListener {
             if (habit.progress < habit.goal) {
-                habit.progress++
+                viewModel.tambahProgress(habit)
                 notifyItemChanged(position)
                 viewModel.saveToFile()
             }
@@ -61,7 +61,7 @@ class HabitAdapter(val habitList: ArrayList<Habit>, private val viewModel: Habit
 
         holder.binding.btnMin.setOnClickListener {
             if (habit.progress > 0) {
-                habit.progress--
+                viewModel.kurangProgress(habit)
                 notifyItemChanged(position)
                 viewModel.saveToFile()
             }

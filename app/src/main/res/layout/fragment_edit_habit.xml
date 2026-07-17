@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="viewModel"
-            type="com.example.habittracker.viewmodel.EditHabitViewModel" />
+            name="habit"
+            type="com.example.habittracker.model.Habit" />
     </data>
 
     <LinearLayout
@@ -27,7 +27,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
             android:hint="Habit Name"
-            android:text="@={viewModel.name}" />
+            android:text="@={habit.name}" />
 
         <EditText
             android:id="@+id/txtDesc"
@@ -35,7 +35,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="12dp"
             android:hint="Description"
-            android:text="@={viewModel.description}" />
+            android:text="@={habit.description}" />
 
         <EditText
             android:id="@+id/txtGoal"
@@ -44,7 +44,7 @@
             android:layout_marginTop="12dp"
             android:hint="Goal"
             android:inputType="number"
-            android:text="@={viewModel.goal}" />
+            android:text="@{String.valueOf(habit.goal)}" />
 
         <TextView
             android:layout_width="match_parent"
@@ -57,7 +57,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="12dp"
             android:hint="Unit"
-            android:text="@={viewModel.unit}" />
+            android:text="@={habit.unit}" />
 
         <TextView
             android:layout_width="match_parent"
